@@ -82,10 +82,12 @@ p {
 }
 
 .subtitle {
+	padding-top: 16px;
 	font-size: 25px;
 	font-weight: 200;
 	margin-left: auto;
 	margin-right: auto;
+	line-height: normal;
 }
 
 .title-h1 {
@@ -109,8 +111,8 @@ p {
 }
 .subtitle-img{
 	display: block;
-	padding-top: 8%;
-	padding-bottom: 4%;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -123,6 +125,7 @@ p {
 /*small*/
 @media only screen and (max-width: 735px){
 	.subtitle {
+		padding-top: 18px;
 		font-size: 22px;
 	}
 	.title-h1 {
