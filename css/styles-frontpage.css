@@ -1,23 +1,6 @@
-html{
-	font-family: "Myriad Set Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-}
-body, input, textarea, select, button {
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    -moz-font-feature-settings: 'liga', 'kern';
-}
 body {
 	padding-top: 8%;
-	font-size: 16px;
-	font-weight: 200;
-	letter-spacing: normal;
 }
-
-b {
-	font-weight: 400;
-}
-
 .black {
 	background: #212121;
 }
@@ -87,45 +70,75 @@ h2,
 h3,
 .text-block ul,
 p {
-	color: #212121 !important;
+	color: #eeeeee !important;
 }
 
-h1 {
-	letter-spacing: -0.024em;
+.title {
+	font-size: 28px;
+	font-weight: 100;
+	margin-left: auto;
+	margin-right: auto;
 	line-height: normal;
-	margin-left: auto;
-	margin-right: auto;
-	font-weight: 300;
-	line-height: 1.24em;
 }
 
-h3 {
-	font-size: 30px;
-	line-height: 1.05556;
+.subtitle {
+	font-size: 25px;
+	font-weight: 200;
 	margin-left: auto;
 	margin-right: auto;
-	font-weight: 300;
-	line-height: 1.24em;
+}
+
+.title-h1 {
+	font-size: 60px;
+}
+
+.title-h2 {
+	font-size: 48px;
+}
+
+.title-h3 {
+	font-size: 30px;
+	line-height: normal;
+}
+
+.title-img{
+	display: block;
+	padding-bottom: 4%;
+	margin-left: auto;
+	margin-right: auto;
+}
+.subtitle-img{
+	display: block;
+	padding-top: 8%;
+	padding-bottom: 4%;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /*middle*/
 @media only screen and (max-width: 1068px){
-	body {
-		padding-top: 6%;
-	}
-	h3 {
-		font-size: 26px;
-	}
+
 
 }
 /*small*/
 @media only screen and (max-width: 735px){
-	body {
-		padding-top: 4%;
-		font-size: 14px;
-		font-weight: 200;
+	.subtitle {
+		font-size: 22px;
 	}
-	h3 {
-		font-size: 20px;
+	.title-h1 {
+		font-size: 50px;
+	}
+	.title-h2 {
+		font-size: 40px;
+	}
+	.title-h3 {
+		font-size: 24px;
+	}
+	.title-img{
+		padding-bottom: 2%;
+	}
+	.subtitle-img{
+		padding-top: 3%;
+		padding-bottom: 1%;
 	}
 }
