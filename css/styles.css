@@ -80,7 +80,7 @@ p {
 }
 
 .text-block {
-	padding: 5% 8%;
+	padding: 20px 16%;
 }
 .text-block h1,
 h2,
@@ -110,6 +110,9 @@ h3 {
 
 /*middle*/
 @media only screen and (max-width: 1068px){
+	.text-block {
+		padding: 20px 12%;
+	}
 	body {
 		padding-top: 6%;
 	}
@@ -118,8 +121,12 @@ h3 {
 	}
 
 }
+
 /*small*/
 @media only screen and (max-width: 735px){
+	.text-block {
+		padding: 20px 6%;
+	}
 	body {
 		padding-top: 4%;
 		font-size: 14px;
@@ -127,5 +134,12 @@ h3 {
 	}
 	h3 {
 		font-size: 20px;
+	}
+}
+
+/* under iphone (max = 5.5inch iphone6 plus) */
+@media only screen and (max-width: 414px){
+	.text-block {
+		padding: 20px 2.5%;
 	}
 }

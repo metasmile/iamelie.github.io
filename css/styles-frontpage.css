@@ -37,34 +37,6 @@ a:hover {
 p {
 	color: #212121;
 }
-.btn {
-    padding: 14px 24px;
-    border: 0 none;
-    font-weight: 700;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-	margin: 25px 0;
-	background: #7acb2c;
-	text-shadow: 0 1px 0 #222;
-}
-.btn:hover {
-	background: #41ddda;
-}
-.upload-form {
-	padding: 40px 40px;
-	background: #FFF;
-	border-radius: 10px;
-	margin-top: 30px;
-}
-.help-list {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
-
-.text-block {
-	padding: 5% 8%;
-}
 .text-block h1,
 h2,
 h3,
