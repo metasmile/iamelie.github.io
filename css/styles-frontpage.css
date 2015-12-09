@@ -25,10 +25,11 @@ span a {
 	padding: 0;
 }
 a {
-	color: #7acb2c;
+	color: #bbbbbb;
 }
 a:hover {
-	color: #41ddda;
+	color: #fff;
+	text-decoration: none;
 }
 .links li {
 	display: inline;
