@@ -108,6 +108,34 @@ h3 {
 	line-height: 1.24em;
 }
 
+
+/* vimeo player resizer*/
+.container_video{
+	margin: 30px auto 30px auto;
+	text-align:center;
+  	vertical-align: middle;
+}
+
+.tutorial_video {
+	width: 320px;
+	height: 569px;
+}
+
+.videoWrapper {
+	position: relative;
+	padding-bottom: 177.89473684210526%; /* 380:676 */
+	height: 0;
+	pointer-events: none;
+}
+.videoWrapper iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+}
+
 /*middle*/
 @media only screen and (max-width: 1068px){
 	.text-block {
@@ -141,31 +169,8 @@ h3 {
 	.text-block {
 		padding: 20px 2.5%;
 	}
-}
-
-/* vimeo player resizer*/
-.container_video{
-	margin: 30px auto 30px auto;
-	text-align:center;
-  	vertical-align: middle;
-}
-
-iframe.tutorial_video {
-	width: 320px;
-	height: 569px;
-}
-
-.videoWrapper {
-	position: relative;
-	padding-bottom: 177.89473684210526%; /* 380:676 */
-	height: 0;
-	pointer-events: none;
-}
-.videoWrapper iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	width: 100%;
-	height: 100%;
+	.tutorial_video {
+		width: 280px;
+		height: 498px;
+	}
 }
