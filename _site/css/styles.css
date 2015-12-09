@@ -117,8 +117,8 @@ h3 {
 }
 
 .tutorial_video {
-	width: 320px;
-	height: 569px;
+	width: 354px;
+	height: 629px;
 }
 
 .videoWrapper {
@@ -164,11 +164,23 @@ h3 {
 	}
 }
 
-/* under iphone (max = 5.5inch iphone6 plus) */
+/* under iphone 6 plus */
 @media only screen and (max-width: 414px){
 	.text-block {
 		padding: 20px 2.5%;
 	}
+}
+
+/* under iphone 6 */
+@media only screen and (max-width: 375px){
+	.tutorial_video {
+		width: 320px;
+		height: 569px;
+	}
+}
+
+/* in-app safari controller or small */
+@media only screen and (max-width: 364px){
 	.tutorial_video {
 		width: 280px;
 		height: 498px;
