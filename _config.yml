@@ -20,13 +20,3 @@ github_username:  jekyll
 # Build settings
 markdown: kramdown
 
-# Redirect
-gems:
-  - jekyll-redirect-from
-
----
-layout: redirected
-sitemap: false
-permalink: /facebook/
-redirect_to:  "https://www.facebook.com/Elie-109041146134228/"
----
