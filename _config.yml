@@ -23,3 +23,5 @@ markdown: kramdown
 # Redirect
 gems:
   - jekyll-redirect-from
+  
+redirect_from: "/foo"
