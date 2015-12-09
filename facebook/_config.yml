@@ -23,3 +23,9 @@ markdown: kramdown
 # Redirect
 gems:
   - jekyll-redirect-from
+  
+whitelist:
+  - jekyll-redirect-from
+  
+redirect_to:
+  - https://www.facebook.com/Elie-Capture-you-Camera-for-you-109041146134228
