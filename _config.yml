@@ -25,3 +25,4 @@ gems:
   - jekyll-redirect-from
   
 redirect_from: "/foo"
+redirect_to: "https://www.facebook.com/Elie-Capture-you-Camera-for-you-109041146134228"
