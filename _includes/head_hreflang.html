@@ -1,0 +1,6 @@
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}" />
+{% for l in site.langs %}
+{% for c in l[1].countries %}
+<link rel="alternate" hreflang="{{ l[0] }}-{{ c }}" href="{{ site.url }}{{ site.baseurl }}{{ l[0] }}" />
+{% endfor %}
+{% endfor %}

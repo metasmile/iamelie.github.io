@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% include head_init.html %}
+        {% include head_hreflang.html %}
+        {% include head_css.html %}
+        {% include head_meta_ext.html %}
+    </head>
+    <body class="landing-page landing-page1">
+        <!-- https://www.iso.org/obp/ui/#search -->
+        {% include topbar.html current_lang=page.lang%}
+        <div class="wrapper">
+            {%
+                include title.html
+                title=page.title
+                subtitle=page.subtitle
+                vimeo_id=page.media.vimeo
+                desc=page.desc
+            %}
+
+            {% for f in page.features %}
+                {% include feature.html title=f.title desc=f.desc media=f.media %}
+            {% endfor %}
+
+            {% include footer.html %}
+        </div>
+    </body>
+    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+    {% include google_anal.html %}
+</html>

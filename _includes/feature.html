@@ -1,0 +1,39 @@
+<div class="section section-features">
+    <div class="container">
+        <div class="row">
+
+            <div class="{% if include.media %}col-md-5 {% endif %}feature-description">
+                <h4 class="feature-title">{{ include.title }}</h4>
+                <p>{{ include.desc }}</p>
+                <!-- <a href="http://www.creative-tim.com/product/awesome-landing-page" id="Demo3" class="btn btn-fill btn-info" data-button="info">Get Free Demo</a> -->
+            </div>
+            <div class="col-md-6 col-md-offset-1">
+                {% if include.media.vimeo %}
+                    {% include video.html vimeo_id=include.media.vimeo %}
+                <!-- <div id="description-carousel" class="carousel fade" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="item">
+                            {% include video.html vimeo_id="148305441" %}
+                        </div>
+                        <div class="item active">
+                            {% include video.html vimeo_id="148305441" %}
+                        </div>
+                        <div class="item">
+                            {% include video.html vimeo_id="148305441" %}
+                        </div>
+                    </div>
+                    <ol class="carousel-indicators carousel-indicators-blue">
+                        <li data-target="#description-carousel" data-slide-to="0" class=""></li>
+                        <li data-target="#description-carousel" data-slide-to="1" class="active"></li>
+                        <li data-target="#description-carousel" data-slide-to="2" class=""></li>
+                    </ol>
+                </div> -->
+                {% elsif include.media.image %}
+                <center>
+                    <img src="{{ include.media.image }}" style="max-height: 532px;max-width: 400px;"/>
+                </center>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

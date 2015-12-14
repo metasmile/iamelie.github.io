@@ -5,18 +5,79 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 
+# syntax : https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+
+# Gems
+gems:
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
+
 # Site settings
-title: Your awesome title
-email: your-email@domain.com
+title: Elie | Capture you. Camera for you.
+email: your@elie.camera
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
   line in _config.yml. It will appear in your document head meta (for
   Google search results) and in your feed.xml site description.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://yourdomain.com" # the base hostname & protocol for your site
+baseurl: "/"
+url: "http://elie.camera"
 twitter_username: jekyllrb
 github_username:  jekyll
 
 # Build settings
 markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
 
+# Appstore
+appstore_id : "1051585862"
+
+# External links
+facebook : /facebook
+twitter : http://twitter.com/elie_cam
+vimeo : https://vimeo.com/user46402004/videos
+
+# i18n
+# 3166-1 : https://en.wikipedia.org/wiki/ISO_3166-1
+# 0x0404 zh-TW Chinese (Taiwan)                     0x7C04 zh-CHT Chinese (Traditional)
+# 0x0804 zh-CN Chinese (People's Republic of China) 0x0004 zh-CHS Chinese (Simplified)
+# 0x0C04 zh-HK Chinese (Hong Kong S.A.R.)           0x7C04 zh-CHT Chinese (Traditional)
+# 0x1004 zh-SG Chinese (Singapore)                  0x0004 zh-CHS Chinese (Simplified)
+# 0x1404 zh-MO Chinese (Macau S.A.R.)               0x7C04 zh-CHT Chinese (Traditional)
+langs:
+    en :
+        countries : [US, GB, AU] # iso3166-1 alpha 2
+        label : English
+    de :
+        countries : [DE]
+        label : Deutsch
+    fr :
+        countries : [FR, CA]
+        label : Français
+    ja :
+        countries : [JP]
+        label : 日本語
+    zh_Hans :
+        countries : [CN, SG]
+        label : 中文
+    zh_Hant :
+        countries : [HK, TW]
+        label : 中文
+# - Tiếng Việt : vn
+# - Italiano : it
+# - العربية : sa
+# - Čeština : cz
+# - Bahasa Indonesia : id
+# - Español : es
+# - Русский : ru
+# - Türkçe : tr
+# - Română : ro
+# - Polski : pl
+# - Nederlands (Nederland) : nl
+# - Magyar : hu
+# - हिंदी : in
+# - 한국어 : kr
+# - Українською : ua
+# - Ελληνικά : gr

@@ -1,0 +1,81 @@
+/*
+    video - vimeo
+*/
+.embed-responsive.embed-responsive-9by16 {
+  padding-bottom: 177.777%;
+}
+
+.embed-responsive {
+    position: relative;
+    display: block;
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.embed-responsive-portrait {
+    width: 360px;
+    height: 640px;
+    margin: 0 auto;
+}
+
+.embed-responsive-portrait.minimize {
+    width: 299px;
+    height: 532px;
+}
+
+
+.btn {
+    border-radius:2em;
+}
+
+.dropdown-menu{
+    min-width:0;
+    background-color:#1B1B1B;
+    border-radius: 1em;
+}
+
+.dropdown-menu > li > a {
+    color: white;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  color: #f0f0f0;
+  text-decoration: none;
+  background-color: #3D3D3D;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #fff;
+  text-decoration: none;
+  background-color: #428bca;
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+    /*.navbar-right .dropdown-menu {
+        right: auto;
+    }*/
+}
+
+@media (max-width: 767px) {
+
+}
+
+
+/* to fit
+- embed-responsive
+
+    text-align: center;
+
+- iframe
+
+    position: relative;
+    width: 299px;
+    height: 531.5553229999999px;
+    border: 0;
+    margin-left: auto;
+    margin-right: auto;
+*/
