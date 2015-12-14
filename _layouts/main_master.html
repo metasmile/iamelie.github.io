@@ -10,13 +10,7 @@
         <!-- https://www.iso.org/obp/ui/#search -->
         {% include topbar.html current_lang=page.lang %}
         <div class="wrapper">
-            {%
-                include title.html
-                title=page.title
-                subtitle=page.subtitle
-                vimeo_id=page.media.vimeo
-                desc=page.desc
-            %}
+            {% include title.html title=page.title subtitle=page.subtitle vimeo_id=page.media.vimeo desc=page.desc %}
 
             {% for f in page.features %}
                 {% include feature.html title=f.title desc=f.desc media=f.media %}
