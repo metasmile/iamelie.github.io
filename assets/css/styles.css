@@ -185,6 +185,13 @@ appstore badge
 	margin-right: auto;
 }
 
+img.feature_image {
+	max-height: 532px;
+	max-width: 400px;
+	width: 100%;
+	height: 100%;
+}
+
 .filter-gradient:after{
     opacity:0;
 }
