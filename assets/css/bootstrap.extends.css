@@ -22,9 +22,6 @@
 .embed-responsive-portrait.minimize {
     width: 299px;
     height: 532px;
-    /*min-height: 539px;
-    max-width: 299px;
-    min-width: 258px;*/
 }
 
 @media (max-width: 366px) {

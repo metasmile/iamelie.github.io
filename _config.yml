@@ -46,6 +46,7 @@ vimeo : https://vimeo.com/user46402004/videos
 # 0x0C04 zh-HK Chinese (Hong Kong S.A.R.)           0x7C04 zh-CHT Chinese (Traditional)
 # 0x1004 zh-SG Chinese (Singapore)                  0x0004 zh-CHS Chinese (Simplified)
 # 0x1404 zh-MO Chinese (Macau S.A.R.)               0x7C04 zh-CHT Chinese (Traditional)
+# follwing : https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
 langs:
     en :
         countries : [US, GB, AU] # iso3166-1 alpha 2
@@ -53,16 +54,16 @@ langs:
     de :
         countries : [DE]
         label : Deutsch
-    fr_FR :
+    fr :
         countries : [FR, CA]
         label : Français
     ja :
         countries : [JP]
         label : 日本語
-    zh_Hans :
+    zh-Hans :
         countries : [CN, SG]
         label : 中文
-    zh_Hant :
+    zh-Hant :
         countries : [HK, TW]
         label : 中文
 # - Tiếng Việt : vn

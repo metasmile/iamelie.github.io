@@ -35,11 +35,11 @@ function redirectIfMatch(){
     if(basepath){
         var matchers = {
             '/' : langMatcher('en'),
-            '/fr_FR' : langMatcher('fr'),
+            '/fr' : langMatcher('fr'),
             '/de' : langMatcher('de'),
             '/ja' : langMatcher('ja'),
-            '/zh_Hans' : langMatcher('zh',['Hans','CN','SG']),
-            '/zh_Hant' : langMatcher('zh',['Hant','TW','HK'])
+            '/zh-Hans' : langMatcher('zh',['Hans','CN','SG']),
+            '/zh-Hant' : langMatcher('zh',['Hant','TW','HK'])
         };
         for (var m in matchers){
             if(basepath.replace(/^\s+|\s+$/g, '').match(matchers[m])){

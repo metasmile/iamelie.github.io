@@ -50,10 +50,10 @@ appstore badge
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.aapl-zh_Hant:before {
+.aapl-zh-Hant:before {
 	content: "\e600";
 }
-.aapl-zh_Hans:before {
+.aapl-zh-Hans:before {
 	content: "\e601";
 }
 .aapl-ja:before {
@@ -101,7 +101,7 @@ appstore badge
 .aapl-ru:before {
 	content: "\e610";
 }
-.aapl-pt_BR:before {
+.aapl-pt-BR:before {
 	content: "\e611";
 }
 .aapl-pt:before {
@@ -131,13 +131,13 @@ appstore badge
 .aapl-it:before {
 	content: "\e61a";
 }
-.aapl-fr_FR:before {
+.aapl-fr:before {
 	content: "\e61b";
 }
-.aapl-es_419:before {
+.aapl-es-419:before {
 	content: "\e61c";
 }
-.aapl-es_ES:before {
+.aapl-es:before {
 	content: "\e61d";
 }
 .aapl-en:before {
