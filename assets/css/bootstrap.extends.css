@@ -20,18 +20,17 @@
 }
 
 .embed-responsive-portrait.minimize {
-    /*width: 299px;
-    height: 532px;*/
-    width: 100%;
-    height: 100%;
-    min-height: 539px;
+    width: 299px;
+    height: 532px;
+    /*min-height: 539px;
     max-width: 299px;
-    min-width: 258px;
+    min-width: 258px;*/
 }
 
-@media (max-width: 340px) {
+@media (max-width: 366px) {
     .embed-responsive-portrait.minimize {
-        min-height: 468px;
+        width: 258px;
+        height: 468px;
     }
 }
 
