@@ -8,8 +8,7 @@ body, input, textarea, select, button {
     -moz-font-feature-settings: 'liga', 'kern';
 }
 body {
-	background-color: black;
-
+	background-color: #202020;
 	font-size: 16px;
 	font-weight: 200;
 	color: white;
