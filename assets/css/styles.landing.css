@@ -1,5 +1,6 @@
 body{
 	background: url('/assets/images/topbg.gif') no-repeat center center fixed;
+	background-size:1200px 800px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
