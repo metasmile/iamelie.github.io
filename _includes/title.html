@@ -12,11 +12,11 @@
                 <!-- http://www.appurl.io/ -->
                 <a href="https://itunes.apple.com/app/{{ site.appstore_id }}">
                 {% if page.lang == 'en' %}
-                    <div class="buttons text-center button-appstore" style="font-size:50px;">
-                        <img width="169" height="58" src="assets/images/badge169.png"/>
+                    <div class="buttons text-center button-appstore">
+                        <img class="button-appstore-image" src="assets/images/badge169.png"/>
                     </div>
                 {% else %}
-                    <div class="buttons text-center button-appstore aapl aapl-{{ page.lang }}" style="font-size:50px;"></div>
+                    <span class="buttons text-center button-appstore aapl aapl-{{ page.lang }}" style="font-size:50px;"></span>
                 {% endif %}
                 </a>
             </div>
