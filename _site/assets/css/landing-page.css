@@ -526,7 +526,7 @@ a:focus, a:active {
 }*/
 
 .footer {
-  background-color: #0A0A0A;
+  background-color: #252525;
   line-height: 20px;
 }
 .footer nav > ul {
@@ -1665,7 +1665,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#de8e0009', e
   }
 
   .landing-page .navbar-top{
-    background: #0A0A0A;
+    background: #202020;
   }
 
   .landing-page .parallax {

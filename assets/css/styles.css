@@ -262,6 +262,13 @@ header title
 	margin-bottom: 50px;
 }
 
+.section .section-message-text{
+	 color: #efefef;
+	 font-size: 28px;
+	 max-width: 80%;
+	 position: relative;
+	 margin: 30px auto;
+}
 
 @media (max-width: 991px){
     .landing-page .section .container {
@@ -270,6 +277,12 @@ header title
 
 	.footer .social-area {
 		text-align: center;
+	}
+
+	.section .section-message-text{
+		font-size: 20px;
+		max-width: 90%;
+		margin: 20px auto;
 	}
 }
 
