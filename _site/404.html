@@ -24,20 +24,17 @@ function langMatcher(format_lang, format_regions){
     return new RegExp(['^', format_lang, format_regions ? '[-_]('+format_regions.join('|')+')' : '.*', '$'].join(''), 'i');
 }
 function redirectIfMatch(){
+    var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"}};
     var language = window.navigator.userLanguage || window.navigator.language;
     var basepath = window.location.pathname && window.location.pathname.split('/')[1];
     if(basepath){
-        var matchers = {
-            '/' : langMatcher('en'),
-            '/fr' : langMatcher('fr'),
-            '/de' : langMatcher('de'),
-            '/ja' : langMatcher('ja'),
-            '/zh-Hans' : langMatcher('zh',['Hans','CN','SG']),
-            '/zh-Hant' : langMatcher('zh',['Hant','TW','HK'])
-        };
-        for (var m in matchers){
-            if(basepath.replace(/^\s+|\s+$/g, '').match(matchers[m])){
-                redirect(m);
+        for (var lang in langs){
+            var l = lang.split('-');
+            var lobj = langs[lang];
+            //zh-Hans -> langMatcher(zh, ['Hans','CN','SG']);
+            var matcher = langMatcher(l[0], l[1] && lobj.countries.concat(l[1]));
+            if(basepath.replace(/^\s+|\s+$/g, '').match(matcher) || language.match(matcher)){
+                redirect(lobj.path);
                 return true;
             }
         }

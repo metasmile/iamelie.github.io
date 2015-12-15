@@ -51,21 +51,27 @@ langs:
     en :
         countries : [US, GB, AU] # iso3166-1 alpha 2
         label : English
+        path : "/"
     de :
         countries : [DE]
         label : Deutsch
+        path : "/de"
     fr :
         countries : [FR, CA]
         label : Français
+        path : "/fr"
     ja :
         countries : [JP]
         label : 日本語
+        path : "/ja"
     zh-Hans :
         countries : [CN, SG]
         label : 中文
+        path : "/zh-Hans"
     zh-Hant :
         countries : [HK, TW]
         label : 中文
+        path : "/zh-Hant"
 # - Tiếng Việt : vn
 # - Italiano : it
 # - العربية : sa
