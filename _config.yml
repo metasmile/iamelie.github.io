@@ -53,7 +53,7 @@ langs:
     de :
         countries : [DE]
         label : Deutsch
-    fr :
+    fr_FR :
         countries : [FR, CA]
         label : Français
     ja :
