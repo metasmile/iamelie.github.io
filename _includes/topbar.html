@@ -29,7 +29,7 @@
                                 {% assign lang = lc[0] %}
                                 {% if lang != page.lang %}
                                     <li>
-                                        <a href="/{{ lang }}">
+                                        <a href="{{ lc[1].path }}">
                                             {{ site.langs[lang].label }}
                                             {% for c in site.langs[lang].countries %}
                                                 <span class="circle_round flag-icon flag-icon-squared flag-icon-{{ c | downcase }} offset3"></span>
