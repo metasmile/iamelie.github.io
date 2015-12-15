@@ -1,8 +1,58 @@
 <!DOCTYPE html>
 <html>
+{% if page.redirect_to %}
 <head>
 <link rel="canonical" href="{{ page.redirect_to }}"/>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta http-equiv="refresh" content="0;url={{ page.redirect_to }}" />
 </head>
+{% elsif page.redirect_auto %}
+<script type="text/javascript">
+//<![CDATA[
+function redirect(url) {
+    var ua        = navigator.userAgent.toLowerCase(),
+        isIE      = ua.indexOf('msie') !== -1,
+        version   = parseInt(ua.substr(4, 2), 10);
+    // Internet Explorer 8 and lower
+    if (isIE && version < 9) {
+        var link = document.createElement('a');
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+    }
+    // All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like IE8 & lower does)
+    else {
+        window.location.href = url;
+    }
+}
+function langMatcher(format_lang, format_regions){
+    // /^fr[-_](FR|CA)$/i or /^fr.*$/i
+    return new RegExp(['^', format_lang, format_regions ? '[-_]('+format_regions.join('|')+')' : '.*', '$'].join(''), 'i');
+}
+function redirectIfMatch(){
+    var language = window.navigator.userLanguage || window.navigator.language;
+    var basepath = window.location.pathname && window.location.pathname.split('/')[1];
+    if(basepath){
+        var matchers = {
+            '/' : langMatcher('en'),
+            '/fr_FR' : langMatcher('fr'),
+            '/de' : langMatcher('de'),
+            '/ja' : langMatcher('ja'),
+            '/zh_Hans' : langMatcher('zh',['Hans','CN','SG']),
+            '/zh_Hant' : langMatcher('zh',['Hant','TW','HK'])
+        };
+        for (var m in matchers){
+            if(basepath.replace(/^\s+|\s+$/g, '').match(matchers[m])){
+                redirect(m);
+                return true;
+            }
+        }
+    }
+    redirect('/');
+    return false;
+}
+redirectIfMatch();
+//]]>
+</script>
+{% endif %}
 </html>
