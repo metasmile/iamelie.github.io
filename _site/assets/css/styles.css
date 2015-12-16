@@ -307,11 +307,11 @@ img.center {
 
 .logo-container .logo-version{
 	display: inline-block;
-	vertical-align: middle;
+	vertical-align: bottom;
 	font-size: 9px;
 	color: #777777;
 	font-weight: bold;
-	margin-left: 3px;
+	/*margin-left: 3px;*/
 }
 
 @media (min-width: 992px){
