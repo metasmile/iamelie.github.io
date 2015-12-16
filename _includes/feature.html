@@ -4,40 +4,34 @@
             <div class="{% if include.media %}col-md-5 {% endif %}feature-description">
                 <h4 class="feature-title">{{ include.title }}</h4>
                 <p>{{ include.desc }}</p>
-                <!-- <a href="" id="Demo3" class="btn btn-fill btn-info" data-button="info"></a> -->
             </div>
             <div class="col-md-6 col-md-offset-1">
-                {% for m in include.media %}
-                {% assign k = m[0] %}
-                {% assign v = m[1] %}
                 {% assign carousel_id = 'description-carousel' | append:include.id %}
-                {% if k == 'vimeo' %}
-                    {% include video.html vimeo_id=v %}
-<!--
-                    <div id="{{ carousel_id }}" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
-                            <div class="item active">
-                                {% include video.html vimeo_id="148096687" %}
-                            </div>
-                            <div class="item">
-                                {% include video.html vimeo_id="148095304" %}
-                            </div>
-                            <div class="item">
-                                {% include video.html vimeo_id="148305213" %}
-                            </div>
+                {% assign mediasize = include.media | size %}
+                {% if mediasize > 0 %}
+                <div id="{{ carousel_id }}" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for m in include.media %}
+                        <div class="item{% if forloop.index0 == 0 %} active{% endif %}">
+                            {% assign k = m[0] %}
+                            {% assign v = m[1] %}
+                            {% if k == 'vimeo' %}
+                                {% include video.html vimeo_id=v %}
+                            {% elsif k == 'image' %}
+                                <center><img src="{{ v }}" class="feature_image"/></center>
+                            {% endif %}
                         </div>
-                        <ol class="carousel-indicators carousel-indicators-white">
-                            <li data-target="#{{ carousel_id }}" data-slide-to="0" class="active"></li>
-                            <li data-target="#{{ carousel_id }}" data-slide-to="1" class=""></li>
-                            <li data-target="#{{ carousel_id }}" data-slide-to="2" class=""></li>
-                        </ol>
-                    </div> -->
-
-                {% elsif k == 'image' %}
-                <center><img src="{{ v }}" class="feature_image"/></center>
+                        {% endfor %}
+                    </div>
+                    {% if mediasize > 1 %}
+                    <ol class="carousel-indicators">
+                        {% for m in include.media %}
+                        <li data-target="#{{ carousel_id }}" data-slide-to="{{ forloop.index0 }}" class="{% if forloop.index0 == 0 %}active{% endif %}"></li>
+                        {% endfor %}
+                    </ol>
+                    {% endif %}
+                </div>
                 {% endif %}
-                {% endfor %}
-
             </div>
         </div>
     </div>
