@@ -254,7 +254,7 @@ header title
 .feature-title{
 	color: #ffffff;
 	margin-bottom: 20px;
-	/*margin-top: 0;*/
+	margin-top: 10px;
 	font-size: 30px;
 	position: relative;
 	line-height: 34px;
