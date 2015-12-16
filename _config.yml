@@ -32,6 +32,7 @@ kramdown:
   hard_wrap: false
 
 # Appstore
+appstore_version : "1.0"
 appstore_id : "1051585862"
 
 # External links
