@@ -12,14 +12,14 @@
         <div class="wrapper">
             {% include title.html title=page.title subtitle=page.subtitle vimeo_id=page.media.vimeo desc=page.desc %}
             {% for f in page.features %}
-                {% include feature.html title=f.title desc=f.desc media=f.media %}
+                {% include feature.html title=f.title desc=f.desc media=f.media id=forloop.index %}
             {% endfor %}
             {% include footer_above.html %}
             {% include footer.html %}
         </div>
     </body>
-    <script src="assets/js/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="assets/js/jquery-1.11.3.min.js" type="text/javascript"></script>
     <script src="assets/js/jquery-ui-1.10.4.custom.min.js" type="text/javascript"></script>
-    <script src="assets/js/bootstrap.js" type="text/javascript"></script>
+    <script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
     {% include google_anal.html %}
 </html>
