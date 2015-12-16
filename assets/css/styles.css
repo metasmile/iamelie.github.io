@@ -305,6 +305,15 @@ img.center {
     margin: 0 auto;
 }
 
+.logo-container .logo-version{
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 9px;
+	color: #777777;
+	font-weight: bold;
+	margin-left: 3px;
+}
+
 @media (min-width: 992px){
 	.logo-container{
 		margin-left:0px;
