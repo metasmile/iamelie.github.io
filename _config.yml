@@ -35,6 +35,9 @@ appstore_id : "1051585862"
 appstore_url : "https://itunes.apple.com/app/id1051585862"
 appstore_name : "Elie - Capture you. Camera for you."
 
+# Business
+presskit_url : http://github.com/iamelie/elie-presskit/archive/master.zip
+
 # External links
 facebook : /facebook
 twitter : http://twitter.com/elie_cam
