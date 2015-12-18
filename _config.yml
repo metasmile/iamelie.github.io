@@ -37,6 +37,8 @@ appstore_name : "Elie - Capture you. Camera for you."
 
 # Business
 presskit_url : http://github.com/iamelie/elie-presskit/archive/master.zip
+marketing_main_desc : "An intelligent, automatic photographing camera without a shutter button."
+marketing_sub_desc : "When you are almost finished posing, Elie will take a picture of you."
 
 # External links
 facebook : /facebook
