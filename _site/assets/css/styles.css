@@ -246,6 +246,22 @@ header title
 	height: 100%;*/
 }
 
+.button-appstore-fallback-image{
+	display: none;
+}
+
+/* desktop */
+@media screen and (min-width: 1024px){
+	.button-appstore-image{
+		display: none;
+	}
+	.button-appstore-fallback-image{
+		display: block;
+		width: 360px;
+		height: 58px;
+	}
+}
+
 
 /*
 	features
