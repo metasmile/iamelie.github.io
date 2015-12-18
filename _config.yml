@@ -29,6 +29,9 @@ kramdown:
   input: GFM
   hard_wrap: false
 
+# Internal
+deeplink_url_open : "eliecam://open"
+
 # Appstore
 appstore_version : "1.0"
 appstore_id : "1051585862"
