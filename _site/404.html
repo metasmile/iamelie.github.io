@@ -24,17 +24,23 @@ function langMatcher(format_lang, format_regions){
     // /^fr[-_](FR|CA)$/i or /^fr.*$/i
     return new RegExp(['^', format_lang, format_regions ? '[-_]('+format_regions.join('|')+')' : '.*', '$'].join(''), 'i');
 }
+function isRootPath(){
+    return window.location.pathname == '/';
+}
+function subpathname(){
+    return window.location.pathname && window.location.pathname.split('/')[1];
+}
 function redirectIfMatch(){
     var language = window.navigator.userLanguage || window.navigator.language;
-    var subpath = window.location.pathname && window.location.pathname.split('/')[1];
-    var isRoot = window.location.pathname == '/';
+    var subpath = subpathname();
+    var isrootpath = isRootPath();
 
     for (var lang in langs){
         var lobj = langs[lang];
         var l = lang.split('-');
         var matcher = langMatcher(l[0], l[1] && lobj.countries.concat(l[1])); //zh-Hans -> langMatcher(zh, ['Hans','CN','SG']);
         var matchedViaPath = subpath && subpath.replace(/^\s+|\s+$/g, '').match(matcher);
-        var matchedViaUserLang = isRoot && !subpath && language.match(matcher);
+        var matchedViaUserLang = isrootpath && !subpath && language.match(matcher);
         if(matchedViaPath || matchedViaUserLang){
             //skip check same path
             if(lobj.path == window.location.pathname){
@@ -44,6 +50,11 @@ function redirectIfMatch(){
             return true;
         }
     }
+
+    if(!isrootpath){
+        redirect('/');
+    }
+
     return false;
 }
 

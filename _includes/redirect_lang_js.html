@@ -47,14 +47,17 @@ function redirectIfMatch(){
             return true;
         }
     }
+
+    if(!isrootpath){
+        redirect('/');
+    }
+
     return false;
 }
 
 //automatic redirect
 try{
-    if(!redirectIfMatch() && !isRootPath()){
-        redirect('/');
-    }
+    redirectIfMatch();
 }finally{}
 //]]>
 </script>
