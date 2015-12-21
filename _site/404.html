@@ -4,6 +4,10 @@
 <script type="text/javascript">
 //<![CDATA[
 var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"}};
+function getParameterByName(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
 function redirect(url) {
     var ua        = navigator.userAgent.toLowerCase(),
         isIE      = ua.indexOf('msie') !== -1,
@@ -60,7 +64,9 @@ function redirectIfMatch(){
 
 //automatic redirect
 try{
-    redirectIfMatch();
+    if(!getParameterByName('lang')){
+        redirectIfMatch();
+    }
 }finally{}
 //]]>
 </script>

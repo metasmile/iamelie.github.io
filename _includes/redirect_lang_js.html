@@ -1,6 +1,10 @@
 <script type="text/javascript">
 //<![CDATA[
 var langs = {{ site.langs | jsonify }};
+function getParameterByName(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
 function redirect(url) {
     var ua        = navigator.userAgent.toLowerCase(),
         isIE      = ua.indexOf('msie') !== -1,
@@ -57,7 +61,9 @@ function redirectIfMatch(){
 
 //automatic redirect
 try{
-    redirectIfMatch();
+    if(!getParameterByName('lang')){
+        redirectIfMatch();
+    }
 }finally{}
 //]]>
 </script>

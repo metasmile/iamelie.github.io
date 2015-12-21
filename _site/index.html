@@ -7,6 +7,77 @@
 <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
 <meta name="viewport" content="width=device-width" />
 
+        <script type="text/javascript">
+//<![CDATA[
+var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"}};
+function getParameterByName(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+function redirect(url) {
+    var ua        = navigator.userAgent.toLowerCase(),
+        isIE      = ua.indexOf('msie') !== -1,
+        version   = parseInt(ua.substr(4, 2), 10);
+    // Internet Explorer 8 and lower
+    if (isIE && version < 9) {
+        var link = document.createElement('a');
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+    }
+    // All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like IE8 & lower does)
+    else {
+        window.location.href = url;
+    }
+}
+function langMatcher(format_lang, format_regions){
+    // /^fr[-_](FR|CA)$/i or /^fr.*$/i
+    return new RegExp(['^', format_lang, format_regions ? '[-_]('+format_regions.join('|')+')' : '.*', '$'].join(''), 'i');
+}
+function isRootPath(){
+    return window.location.pathname == '/';
+}
+function subpathname(){
+    return window.location.pathname && window.location.pathname.split('/')[1];
+}
+function redirectIfMatch(){
+    var language = window.navigator.userLanguage || window.navigator.language;
+    var subpath = subpathname();
+    var isrootpath = isRootPath();
+
+    for (var lang in langs){
+        var lobj = langs[lang];
+        var l = lang.split('-');
+        var matcher = langMatcher(l[0], l[1] && lobj.countries.concat(l[1])); //zh-Hans -> langMatcher(zh, ['Hans','CN','SG']);
+        var matchedViaPath = subpath && subpath.replace(/^\s+|\s+$/g, '').match(matcher);
+        var matchedViaUserLang = isrootpath && !subpath && language.match(matcher);
+        if(matchedViaPath || matchedViaUserLang){
+            //skip check same path
+            if(lobj.path == window.location.pathname){
+                return false;
+            }
+            redirect(lobj.path);
+            return true;
+        }
+    }
+
+    if(!isrootpath){
+        redirect('/');
+    }
+
+    return false;
+}
+
+//automatic redirect
+try{
+    if(!getParameterByName('lang')){
+        redirectIfMatch();
+    }
+}finally{}
+//]]>
+</script>
+
+
         <link rel="alternate" hreflang="x-default" href="http://elie.camera" />
 
 
@@ -145,7 +216,7 @@
                                 
                                 
                                     <li>
-                                        <a href="/de">
+                                        <a href="/de?lang=de">
                                             Deutsch
                                             
                                                 <span class="circle_round flag-icon flag-icon-squared flag-icon-de offset3"></span>
@@ -157,7 +228,7 @@
                                 
                                 
                                     <li>
-                                        <a href="/fr">
+                                        <a href="/fr?lang=fr">
                                             Français
                                             
                                                 <span class="circle_round flag-icon flag-icon-squared flag-icon-fr offset3"></span>
@@ -171,7 +242,7 @@
                                 
                                 
                                     <li>
-                                        <a href="/ja">
+                                        <a href="/ja?lang=ja">
                                             日本語
                                             
                                                 <span class="circle_round flag-icon flag-icon-squared flag-icon-jp offset3"></span>
@@ -183,7 +254,7 @@
                                 
                                 
                                     <li>
-                                        <a href="/zh-Hans">
+                                        <a href="/zh-Hans?lang=zh-Hans">
                                             中文
                                             
                                                 <span class="circle_round flag-icon flag-icon-squared flag-icon-cn offset3"></span>
@@ -197,7 +268,7 @@
                                 
                                 
                                     <li>
-                                        <a href="/zh-Hant">
+                                        <a href="/zh-Hant?lang=zh-Hant">
                                             中文
                                             
                                                 <span class="circle_round flag-icon flag-icon-squared flag-icon-hk offset3"></span>
@@ -850,69 +921,5 @@ document,'script','//connect.facebook.net/en_US/fbevents.js');
 fbq('init', '1528871560757931');
 fbq('track', "PageView");</script>
 <noscript><img height="1" width="1" style="display:none" src="http://www.facebook.com/tr?id=1528871560757931&ev=PageView&noscript=1"/></noscript>
-
-    <script type="text/javascript">
-//<![CDATA[
-var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"}};
-function redirect(url) {
-    var ua        = navigator.userAgent.toLowerCase(),
-        isIE      = ua.indexOf('msie') !== -1,
-        version   = parseInt(ua.substr(4, 2), 10);
-    // Internet Explorer 8 and lower
-    if (isIE && version < 9) {
-        var link = document.createElement('a');
-        link.href = url;
-        document.body.appendChild(link);
-        link.click();
-    }
-    // All other browsers can use the standard window.location.href (they don't lose HTTP_REFERER like IE8 & lower does)
-    else {
-        window.location.href = url;
-    }
-}
-function langMatcher(format_lang, format_regions){
-    // /^fr[-_](FR|CA)$/i or /^fr.*$/i
-    return new RegExp(['^', format_lang, format_regions ? '[-_]('+format_regions.join('|')+')' : '.*', '$'].join(''), 'i');
-}
-function isRootPath(){
-    return window.location.pathname == '/';
-}
-function subpathname(){
-    return window.location.pathname && window.location.pathname.split('/')[1];
-}
-function redirectIfMatch(){
-    var language = window.navigator.userLanguage || window.navigator.language;
-    var subpath = subpathname();
-    var isrootpath = isRootPath();
-
-    for (var lang in langs){
-        var lobj = langs[lang];
-        var l = lang.split('-');
-        var matcher = langMatcher(l[0], l[1] && lobj.countries.concat(l[1])); //zh-Hans -> langMatcher(zh, ['Hans','CN','SG']);
-        var matchedViaPath = subpath && subpath.replace(/^\s+|\s+$/g, '').match(matcher);
-        var matchedViaUserLang = isrootpath && !subpath && language.match(matcher);
-        if(matchedViaPath || matchedViaUserLang){
-            //skip check same path
-            if(lobj.path == window.location.pathname){
-                return false;
-            }
-            redirect(lobj.path);
-            return true;
-        }
-    }
-
-    if(!isrootpath){
-        redirect('/');
-    }
-
-    return false;
-}
-
-//automatic redirect
-try{
-    redirectIfMatch();
-}finally{}
-//]]>
-</script>
 
 </html>
