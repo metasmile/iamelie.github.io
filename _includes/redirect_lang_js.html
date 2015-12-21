@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html>
-
 <script type="text/javascript">
 //<![CDATA[
 function redirect(url) {
@@ -24,7 +21,7 @@ function langMatcher(format_lang, format_regions){
     return new RegExp(['^', format_lang, format_regions ? '[-_]('+format_regions.join('|')+')' : '.*', '$'].join(''), 'i');
 }
 function redirectIfMatchLang(){
-    var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"}};
+    var langs = {{ site.langs | jsonify }};
     var language = window.navigator.userLanguage || window.navigator.language;
     console.log(language);
     for (var lang in langs){
@@ -40,7 +37,7 @@ function redirectIfMatchLang(){
     return false;
 }
 function redirectIfMatchPath(){
-    var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"}};
+    var langs = {{ site.langs | jsonify }};
     var language = window.navigator.userLanguage || window.navigator.language;
     var basepath = window.location.pathname && window.location.pathname.split('/')[1];
     if(basepath){
@@ -60,6 +57,3 @@ function redirectIfMatchPath(){
 redirectIfMatchPath();
 //]]>
 </script>
-
-
-</html>
