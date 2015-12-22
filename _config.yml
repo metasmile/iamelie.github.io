@@ -84,6 +84,10 @@ langs:
         countries : [HK, TW]
         label : 中文
         path : "/zh-Hant"
+    ko :
+        countries : [KR]
+        label : 한국어
+        path : "/ko"
 # - Tiếng Việt : vn
 # - Italiano : it
 # - العربية : sa

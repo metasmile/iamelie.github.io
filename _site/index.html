@@ -11,7 +11,7 @@
 
         <script type="text/javascript">
 //<![CDATA[
-var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"}};
+var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"},"ko":{"countries":["KR"],"label":"한국어","path":"/ko"}};
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
@@ -114,6 +114,10 @@ try{
 <link rel="alternate" hreflang="zh-Hant-HK" href="http://elie.camera/zh-Hant" />
 
 <link rel="alternate" hreflang="zh-Hant-TW" href="http://elie.camera/zh-Hant" />
+
+
+
+<link rel="alternate" hreflang="ko-KR" href="http://elie.camera/ko" />
 
 
 
@@ -280,6 +284,18 @@ try{
                                                 <span class="circle_round flag-icon flag-icon-squared flag-icon-hk offset3"></span>
                                             
                                                 <span class="circle_round flag-icon flag-icon-squared flag-icon-tw offset3"></span>
+                                            
+                                        </a>
+                                    </li>
+                                
+                            
+                                
+                                
+                                    <li>
+                                        <a href="/ko?lang=ko">
+                                            한국어
+                                            
+                                                <span class="circle_round flag-icon flag-icon-squared flag-icon-kr offset3"></span>
                                             
                                         </a>
                                     </li>
