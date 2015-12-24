@@ -17,7 +17,7 @@
                             {% assign v = m[1] %}
                             {% if k == 'vimeo' %}
                                 {% include video.html vimeo_id=v %}
-                            {% elsif k == 'image' %}
+                            {% elsif k contains 'image' %}
                                 <center><img src="{{ v }}" class="feature_image"/></center>
                             {% endif %}
                         </div>

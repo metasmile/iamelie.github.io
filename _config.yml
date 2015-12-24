@@ -6,6 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # syntax : https://github.com/Shopify/liquid/wiki/Liquid-for-Designers
+# http://cheat.markdunkley.com/
 
 # Gems
 gems:
