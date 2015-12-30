@@ -37,7 +37,7 @@ deeplink_url_open : "eliecam://open"
 # Appstore
 appstore_version : "1.0"
 appstore_id : "1051585862"
-appstore_url : "https://itunes.apple.com/app/id1051585862"
+appstore_url : "http://itunes.apple.com/app/apple-store/id1051585862?pt=2020888&ct=badge_151230&mt=8"
 appstore_name : "Elie - Capture you. Camera for you."
 
 # Business
