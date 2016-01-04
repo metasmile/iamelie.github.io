@@ -16,7 +16,7 @@ whitelist:
   - jekyll-redirect-from
 
 # Site settings
-title: Elie | Capture you. Camera for you.
+title: Elie | Your next mobile photography assistant.
 email: your@elie.camera
 description: > # this means to ignore newlines until "baseurl:"
   Write an awesome description for your new site here. You can edit this
@@ -38,9 +38,10 @@ deeplink_url_open : "eliecam://open"
 appstore_version : "1.0"
 appstore_id : "1051585862"
 appstore_url : "http://itunes.apple.com/app/apple-store/id1051585862?pt=2020888&ct=badge_151230&mt=8"
-appstore_name : "Elie - Capture you. Camera for you."
+appstore_name : "Elie - Your next mobile photography assistant, Automatic selfie camera"
 
 # Business
+page_title_head : "Elie | "
 presskit_url : http://github.com/iamelie/elie-presskit/archive/master.zip
 marketing_main_desc : "An intelligent, automatic photographing camera without a shutter button."
 marketing_sub_desc : "When you are almost finished posing, Elie will take a picture of you."
