@@ -1,3 +1,6 @@
+---
+layout: post
+---
 - Supporting all controllable functions of elie via Spotlight Search. (e.g. privacy, auto, tilt and etc..)
 - 3D Touch Quick Actions.
 - Continuous shooting stability improvements.
@@ -7,11 +10,12 @@
 
 {% for post in site.posts reverse %}
 {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+{{ post.content }}
 {% unless year == this_year %}
   {% assign year = this_year %}
   <h2>{{ year }}</h2>
 {% endunless %}
 <article>
-    
+
 </article>
 {% endfor %}
