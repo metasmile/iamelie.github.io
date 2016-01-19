@@ -20,7 +20,9 @@
         <div class="text-block text-left">
             <h2>What's New</h2>
             {% for post in posts %}
-            
+            <!-- post.slug == {Release}-{version}-{lang} -->
+                {% assign slugs = post.slug | split: '-' %}
+
             {% endfor %}
         </div>
     <div>
