@@ -19,7 +19,7 @@
         {% if posts | size %}
         <p style="color:#A0A0A0">Last Updated: {{ posts[0].date | date_to_string }}</p>
         <div class="text-block text-left" style="margin-top:60px;">
-            <h2>What's New</h2>
+            <h2 class="text-center">What's New</h2>
             {% for post in posts %}
             <!-- post.slug == {Release}-{version}-{lang} -->
                 {% assign slugs = post.title | split: ' ' %}
