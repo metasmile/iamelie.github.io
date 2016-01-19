@@ -4,6 +4,14 @@
 - Processing performance improvements for photo filters.
 - Bug fixes for privacy mode in the device that doesn't support Touch ID (iPhone 5c or earlier).
 - Other various bug fixes.
-d
-s
-d
+
+{% for post in site.posts reverse %}
+{% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+{% unless year == this_year %}
+  {% assign year = this_year %}
+  <h2>{{ year }}</h2>
+{% endunless %}
+<article>
+    
+</article>
+{% endfor %}
