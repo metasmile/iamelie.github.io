@@ -21,8 +21,14 @@
             <h2>What's New</h2>
             {% for post in posts %}
             <!-- post.slug == {Release}-{version}-{lang} -->
-                {{ post | jsonify }}
-                
+                {% assign slugs = post.title | split: ' ' %}
+                {% if (slugs | size == 3) and (slugs[0] == "Release") and (slugs[2] == page.lang) %}
+                <h3 style="margin-top:40px; font-weight: inherit;">Version {{ slugs[1] }}</h3>
+                <h5>{{ post.date | date: '%B %d, %Y' }}</h5>
+                <p role="article">
+                    {{ post.content }}
+                </p>
+                {% endif %}
             {% endfor %}
         </div>
     <div>
