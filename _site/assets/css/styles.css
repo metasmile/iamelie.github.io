@@ -22,6 +22,16 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6{
 li:hover {
     cursor: pointer;
 }
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #aaaaaa;
+  text-decoration: none;
+}
 /*
 appstore badge
 */
@@ -227,6 +237,10 @@ header title
 }
 
 .container p{
+	color: #cccccc;
+}
+
+.text-block li{
 	color: #cccccc;
 }
 
