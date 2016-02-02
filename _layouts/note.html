@@ -13,14 +13,14 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
-<body class="container text-center" style="padding-top:40px;padding-bottom:40px;">
+<body class="container text-center" style="padding-top:10px;padding-bottom:20px;">
     <div class="container-fluid front-page">
         <h1>Developer Notes</h1>
         {% assign posts = site.posts %}
         {% if posts | size %}
         <p style="color:#A0A0A0">Last Updated: {{ posts[0].date | date_to_string }}</p>
         <!-- notices -->
-        <div class="text-block text-left" style="margin-top:60px;">
+        <div class="text-block text-left" style="margin-top:50px;">
             {% for post in posts %}
             <!-- post.slug : {Notice}-{lang} -->
                 {% assign slugs = post.slug | split: '-' %}
@@ -33,7 +33,7 @@
             {% endfor %}
         </div>
         <!-- what's new -->
-        <div class="text-block text-left" style="margin-top:60px;">
+        <div class="text-block text-left" style="margin-top:50px;">
             {% for post in posts %}
             <!-- post.slug : {Release}-{version}-{lang}  -->
                 {% assign slugs = post.slug | split: '-' %}
