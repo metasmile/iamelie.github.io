@@ -42,7 +42,7 @@
                 {% if forloop.index == 1 %}
                 <h2 class="text-center">What's New</h2>
                 {% endif %}
-                <h3 style="margin-top:40px; font-weight: inherit;">Version {{ slugs[1] }}</h3>
+                <h3 style="margin-top:40px; font-weight: inherit;">{{ slugs[1] }}</h3>
                 <h5>{{ post.date | date: '%B %d, %Y' }}</h5>
                 <p role="article">
                     {{ post.content }}
