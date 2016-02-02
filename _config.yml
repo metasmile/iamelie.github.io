@@ -21,7 +21,7 @@ gems:
 whitelist:
   - jekyll-redirect-from
 
-highlighter: pygments
+highlighter: rouge
 # Site settings
 email: your@elie.camera
 description: > # this means to ignore newlines until "baseurl:"
