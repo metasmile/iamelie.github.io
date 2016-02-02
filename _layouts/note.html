@@ -33,7 +33,7 @@
         </div>
         <!-- what's new -->
         <div class="text-block text-left" style="margin-top:60px;">
-            {% for post in posts %}
+            {% for post in site.posts %}
             <!-- post.slug : {Release}-{version}-{lang}  -->
                 {% assign slugs = post.slug | split: '-' %}
                 {% if (slugs | size == 3) and (slugs[0] == "Release") and (slugs[2] | downcase == page.lang) %}
