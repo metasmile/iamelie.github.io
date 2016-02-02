@@ -18,12 +18,28 @@
         {% assign posts = site.posts %}
         {% if posts | size %}
         <p style="color:#A0A0A0">Last Updated: {{ posts[0].date | date_to_string }}</p>
+        <!-- notices -->
         <div class="text-block text-left" style="margin-top:60px;">
-            <h2 class="text-center">What's New</h2>
             {% for post in posts %}
-            <!-- post.slug == {Release}-{version}-{lang} -->
-                {% assign slugs = post.title | split: ' ' %}
+            <!-- post.slug : {Notice}-{lang} -->
+                {% assign slugs = post.slug | split: '-' %}
+                {% if (slugs | size == 2) and (slugs[0] == "Notice") and (slugs[1] | downcase == page.lang) %}
+                <h2 class="text-center">Notice</h2>
+                <p role="article" style="margin-top:40px; font-weight: inherit;">
+                    {{ post.content }}
+                </p>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <!-- what's new -->
+        <div class="text-block text-left" style="margin-top:60px;">
+            {% for post in posts %}
+            <!-- post.slug : {Release}-{version}-{lang} -->
+                {% assign slugs = post.slug | split: '-' %}
                 {% if (slugs | size == 3) and (slugs[0] == "Release") and (slugs[2] | downcase == page.lang) %}
+                {% if forloop.index == 1 %}
+                <h2 class="text-center">What's New</h2>
+                {% endif %}
                 <h3 style="margin-top:40px; font-weight: inherit;">Version {{ slugs[1] }}</h3>
                 <h5>{{ post.date | date: '%B %d, %Y' }}</h5>
                 <p role="article">
