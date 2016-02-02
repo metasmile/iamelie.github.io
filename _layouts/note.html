@@ -33,9 +33,10 @@
         </div>
         <!-- what's new -->
         <div class="text-block text-left" style="margin-top:60px;">
-            {% for post in site.posts %}
+            {% for post in posts %}
             <!-- post.slug : {Release}-{version}-{lang}  -->
                 {% assign slugs = post.slug | split: '-' %}
+                <!-- {{ slugs }} -->
                 {% if (slugs | size == 3) and (slugs[0] == "Release") and (slugs[2] | downcase == page.lang) %}
                 {% if forloop.index == 1 %}
                 <h2 class="text-center">What's New</h2>
