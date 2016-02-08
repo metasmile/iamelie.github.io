@@ -26,11 +26,13 @@ li:hover {
 a {
   color: white;
   text-decoration: none;
+  font-weight: normal;
 }
 a:hover,
 a:focus {
   color: #aaaaaa;
   text-decoration: none;
+  font-weight: normal;
 }
 /*
 appstore badge
