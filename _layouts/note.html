@@ -5,7 +5,6 @@
     {% include head_init.html %}
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/styles.css" rel="stylesheet">
-
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -15,38 +14,58 @@
 </head>
 <body class="container text-center" style="padding-top:10px;padding-bottom:20px;">
     <div class="container-fluid front-page">
+        {% assign page_bundle_id=page.dir | split:'/' | last %}
+        {% if page.bundle_id %}
+            {% assign page_bundle_id=page.bundle_id %}
+        {% endif %}
+
         <h1>Developer Notes</h1>
         {% assign posts = site.posts %}
         {% if posts | size %}
-        <p style="color:#A0A0A0">Last Updated: {{ posts[0].date | date_to_string }}</p>
+
+        <!-- last update -->
+        {% for post in posts %}
+        {% assign bundle_id = post.path | split :"/" | shift | first %}
+        {% if bundle_id == page_bundle_id %}
+            <p style="color:#A0A0A0">Last Updated: {{ post.date | date_to_string }}</p>
+            {% break %}
+        {% endif %}
+        {% endfor %}
+
         <!-- notices -->
         <div class="text-block text-left" style="margin-top:50px;">
             {% for post in posts %}
-            <!-- post.slug : {Notice}-{lang} -->
-                {% assign slugs = post.slug | split: '-' %}
-                {% if (slugs | size == 2) and (slugs[0] == "Notice") and (slugs[1] | downcase == page.lang) %}
-                <h2 class="text-center">Notice</h2>
-                <p role="article" style="margin-top:40px; font-weight: inherit;">
-                    {{ post.content }}
-                </p>
+                {% assign bundle_id = post.path | split :"/" | shift | first %}
+                {% if bundle_id == page_bundle_id %}
+                    {% assign slugs = post.slug | split: '-' %}
+                    {% if (slugs | size == 2) and (slugs[0] == "Notice") and (slugs[1] | downcase == page.lang) %}
+                    <!-- post.slug : {Notice}-{lang} -->
+                    <h2 class="text-center">Notice</h2>
+                    <p role="article" style="margin-top:40px; font-weight: inherit;">
+                        {{ post.content }}
+                    </p>
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         </div>
         <!-- what's new -->
         <div class="text-block text-left" style="margin-top:50px;">
             {% for post in posts %}
-            <!-- post.slug : {Release}-{version}-{lang}  -->
-                {% assign slugs = post.slug | split: '-' %}
-                <!-- {{ slugs }} -->
-                {% if (slugs | size == 3) and (slugs[0] == "Release") and (slugs[2] | downcase == page.lang) %}
-                {% if forloop.index == 1 %}
-                <h2 class="text-center">What's New</h2>
-                {% endif %}
-                <h3 style="margin-top:40px; font-weight: inherit;">{{ slugs[1] }}</h3>
-                <h5>{{ post.date | date: '%B %d, %Y' }}</h5>
-                <p role="article">
-                    {{ post.content }}
-                </p>
+                {% assign bundle_id = post.path | split :"/" | shift | first %}
+                {% if bundle_id == page_bundle_id %}
+                    {% assign slugs = post.slug | split: '-' %}
+                    <!-- {{ slugs }} -->
+                    {% if (slugs | size == 3) and (slugs[0] == "Release") and (slugs[2] | downcase == page.lang) %}
+                    {% if forloop.index == 1 %}
+                    <!-- post.slug : {Release}-{version}-{lang}  -->
+                    <h2 class="text-center">What's New</h2>
+                    {% endif %}
+                    <h3 style="margin-top:40px; font-weight: inherit;">{{ slugs[1] }}</h3>
+                    <h5>{{ post.date | date: '%B %d, %Y' }}</h5>
+                    <p role="article">
+                        {{ post.content }}
+                    </p>
+                    {% endif %}
                 {% endif %}
             {% endfor %}
         </div>
