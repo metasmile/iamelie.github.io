@@ -3,7 +3,30 @@
 
 <script type="text/javascript">
 //<![CDATA[
-var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/"},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"},"ko":{"countries":["KR"],"label":"한국어","path":"/ko"}};
+var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/en","root":true},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"},"ko":{"countries":["KR"],"label":"한국어","path":"/ko"}};
+var from404 = 'true'=='true' || false;
+var baselang = 'en';
+
+//for IE8
+if (!Array.prototype.filter) {
+  Array.prototype.filter = function(fun /*, thisp*/) {
+    var len = this.length >>> 0;
+    if (typeof fun != "function")
+    throw new TypeError();
+
+    var res = [];
+    var thisp = arguments[1];
+    for (var i = 0; i < len; i++) {
+      if (i in this) {
+        var val = this[i]; // in case fun mutates this
+        if (fun.call(thisp, val, i, this))
+        res.push(val);
+      }
+    }
+    return res;
+  };
+}
+
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
@@ -31,32 +54,51 @@ function langMatcher(format_lang, format_regions){
 function isRootPath(){
     return window.location.pathname == '/';
 }
-function subpathname(){
-    return window.location.pathname && window.location.pathname.split('/')[1];
+function currentpath(){
+    return isRootPath() ? "": "/"+window.location.pathname.split('/').filter(Boolean).join('/');
+}
+function lastpathname(offset){
+    return window.location.pathname.split('/').filter(Boolean).slice(-(1+(offset || 0)))[0];
+}
+function lastpath(offset){
+    return "/"+lastpathname(offset);
+}
+function replacelastpath(path){
+    return window.location.pathname.substring(0, window.location.pathname.indexOf(lastpath()))+path
 }
 function redirectIfMatch(){
     var language = window.navigator.userLanguage || window.navigator.language;
-    var subpath = subpathname();
-    var isrootpath = isRootPath();
 
-    for (var lang in langs){
-        var lobj = langs[lang];
-        var l = lang.split('-');
-        var matcher = langMatcher(l[0], l[1] && lobj.countries.concat(l[1])); //zh-Hans -> langMatcher(zh, ['Hans','CN','SG']);
-        var matchedViaPath = subpath && subpath.replace(/^\s+|\s+$/g, '').match(matcher);
-        var matchedViaUserLang = isrootpath && !subpath && language.match(matcher);
-        if(matchedViaPath || matchedViaUserLang){
-            //skip check same path
-            if(lobj.path == window.location.pathname){
-                return false;
-            }
-            redirect(lobj.path);
-            return true;
+    if(from404){
+        var lang = langs[baselang];
+        if(lang.path == lastpath()){
+            redirect('/');
+        }else{
+            redirect(replacelastpath(lang.path));
         }
-    }
+        return true;
 
-    if(!isrootpath){
-        redirect('/');
+    }else{
+        for (var lang in langs){
+            var lobj = langs[lang];
+            var l = lang.split('-');
+            var matcher = langMatcher(l[0], l[1] && lobj.countries.concat(l[1])); //zh-Hans -> langMatcher(zh, ['Hans','CN','SG']);
+            var _lastpathname = lastpathname();
+            var matchedViaPath = _lastpathname && _lastpathname.replace(/^\s+|\s+$/g, '').match(matcher);
+            var matchedViaUserLang = language.match(matcher);
+
+            if(matchedViaPath || matchedViaUserLang){
+                // if(lobj.root && lang==baselang && isRootPath()){
+                //     return false;
+                // }
+                //skip check same path
+                if(lobj.path == lastpath()){
+                    return false;
+                }
+                redirect(currentpath()+lobj.path);
+                return true;
+            }
+        }
     }
 
     return false;

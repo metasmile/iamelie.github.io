@@ -68,11 +68,13 @@ vimeo : https://vimeo.com/user46402004/videos
 # 0x1004 zh-SG Chinese (Singapore)                  0x0004 zh-CHS Chinese (Simplified)
 # 0x1404 zh-MO Chinese (Macau S.A.R.)               0x7C04 zh-CHT Chinese (Traditional)
 # follwing : https://developer.apple.com/library/ios/documentation/MacOSX/Conceptual/BPInternational/LanguageandLocaleIDs/LanguageandLocaleIDs.html
+baselang: en
 langs:
     en :
         countries : [US, GB, AU] # iso3166-1 alpha 2
         label : English
-        path : "/"
+        path : "/en"
+        root : true
     de :
         countries : [DE]
         label : Deutsch
