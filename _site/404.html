@@ -4,7 +4,7 @@
 <script type="text/javascript">
 //<![CDATA[
 var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/en","root":true},"de":{"countries":["DE"],"label":"Deutsch","path":"/de"},"fr":{"countries":["FR","CA"],"label":"Français","path":"/fr"},"ja":{"countries":["JP"],"label":"日本語","path":"/ja"},"zh-Hans":{"countries":["CN","SG"],"label":"中文","path":"/zh-Hans"},"zh-Hant":{"countries":["HK","TW"],"label":"中文","path":"/zh-Hant"},"ko":{"countries":["KR"],"label":"한국어","path":"/ko"}};
-var from404 = 'true'=='true' || false;
+var from404 = ''=='true' || false;
 var baselang = 'en';
 
 //for IE8
@@ -67,14 +67,18 @@ function replacelastpath(path){
     return window.location.pathname.substring(0, window.location.pathname.indexOf(lastpath()))+path
 }
 function redirectIfMatch(){
+    if(getParameterByName('lang')){
+        return false;
+    }
+
     var language = window.navigator.userLanguage || window.navigator.language;
 
     if(from404){
-        var lang = langs[baselang];
-        if(lang.path == lastpath()){
+        var blang = langs[baselang];
+        if(blang.path == lastpath()){
             redirect('/');
         }else{
-            redirect(replacelastpath(lang.path));
+            redirect(replacelastpath(blang.path));
         }
         return true;
 
@@ -106,8 +110,10 @@ function redirectIfMatch(){
 
 //automatic redirect
 try{
-    if(!getParameterByName('lang')){
-        redirectIfMatch();
+    if(!redirectIfMatch()){
+        if(window.location.pathname.slice(-1)=='/'){
+            redirect(currentpath());
+        }
     }
 }finally{}
 //]]>
