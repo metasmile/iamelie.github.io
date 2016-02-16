@@ -1,0 +1,232 @@
+
+page_title_sub: "自動selfie攝像頭，照片編輯器。"
+title: "你好，"
+subtitle: "我是 Elie"
+desc : "喚醒Elie使高清背面相機照向自己。當你剛要擺好姿勢她會為你拍攝！Elie很主動、很照顧你，她是你拍攝生活的搭檔，是一個沒有快門的相機。現在就來見識Elie吧。"
+media : { vimeo: 150400949 }
+message : "我們期待能夠使你這個Elie的新主人感動。"
+press_title : "Featured"
+press_desc : "2015年12月15日首次發布"
+
+features: [{
+title:
+"
+自動拍攝相機時代的開始
+",
+desc:
+"
+Elie才剛剛出生，她把你的臉當成她的第一拍攝對象
+<br>相比自拍相機，背面相機具有無法比較的性能，在這段時間內，Elie將會是你的高品質自拍搭檔。
+<br><br>但，你也可以進而應用她。比如說，當你的雙手不便於照相，你可以通過Siri喚醒Elie來照相。或者，
+<br>你也可以把Elie裝在無人機上，對嗎？敬請期待續後的更新。
+",
+media: {
+image: "assets/images/scr_home.jpg"
+}
+}
+,
+{
+title:
+"
+Elie的房間
+",
+desc:
+"
+你還在為了得到一張好看的照片，反复地照一張刪一張嗎？
+'Elie's Room'就是為了解決這些問題而設計的特殊照片儲存處。
+<br><br>
+現在，與Elie一起，想照多少就照多少吧。然後在畫面上選擇一兩張你的心上照片進行共享或存在你的iOS相冊中。
+剩下的照片就那樣留著吧。
+<br><br>
+由於Elie's Room獨有的特殊照片管理原理，照片所佔有的容量將不再變大。
+<br><br>
+而且，開啟Privacy Mode，相冊將會以Touch ID鎖定，成為屬於你自己的隱私相冊。
+",
+media: {
+vimeo: 148096687,
+image: "assets/images/scr_touchid.jpg"
+}
+}
+,
+{
+title:
+"
+拍攝視覺 移軸攝影
+",
+desc:
+"
+完成拍攝後再進行修改的時代已過了。
+<br>在Elie的控制欄上開啟移軸攝影吧。當Elie開始拍攝，就會看到美麗的移軸攝影效果。
+
+",
+media: {
+vimeo: 148095304
+}
+}
+,
+{
+title:
+"
+快捷預覽
+",
+desc:
+"
+想要使縮略圖變得原件一樣嗎？那麼摁著縮略圖一小會兒吧。
+<br>可以使畫面左右迴轉，只要你的手指離開觸屏就會回到原來的狀態。很簡單。
+",
+media: {
+vimeo: 148305213
+}
+}
+,
+{
+title:
+"
+多種功能，但極為簡便的UI
+",
+desc:
+"
+你還在看遍整個屏幕來‘工作’嗎？
+<br>Elie為簡化當你使用照片功能時的所有動作而設計。而且，只用下端的三個按鈕就會完成你所需要的所有功能。
+",
+media: {
+image: "assets/images/scr_ui.jpg"
+}
+}
+,
+{
+title:
+"
+為各種情況而設計的5種預設與收藏功能
+",
+desc:
+"
+<br>Optimized Defaults: 以最優化模式進行拍攝。
+<br>Full Automation: 開啟所有自動支持功能進行拍攝。
+<br>Speed​​ Priority: 以照相速度為優先進行拍攝。
+<br>Silence: 防止聲音或光的現出。
+<br>Privacy Priority: 減少照片對別人的漏出。
+<br>Custom Setting: 由你收藏的設定進行拍攝。
+",
+media: {
+vimeo: 148305441
+}
+}
+,
+{
+title:
+"
+面紗
+",
+desc:
+"
+當Elie為你進行拍攝時，畫面將會朝向外側。會不會有些害羞？不用擔心了。
+<br>Elie會根據你的情況，用面紗遮住在拍攝過程中的臉部。
+",
+media: {
+image: "/assets/images/scr_veil.jpg"
+}
+}
+,
+{
+title:
+"
+Elie的反饋
+",
+desc:
+"
+如有人給你拍照一樣，Elie也會通過聲音和亮光來告訴你拍攝已經準備好了。
+<br>如果她認為你離得有點遠，聽不到聲音，Elie就會以光告訴你。
+",
+media: {
+image: "assets/images/scr_feedback.png"
+}
+}
+,
+{
+title:
+"
+拍攝速度調整
+",
+desc:
+"
+如果需要，你也可以進行定時拍照。
+<br>選擇“Speed​​”就可以一張張地照完後進行評論，也可以以最快速度來進行拍照。
+",
+media: {
+image: "assets/images/scr_speed.png"
+}
+}
+,
+{
+title:
+"
+去除逆光
+",
+desc:
+"
+當你的背後存在光圈或有太陽，請開啟去除逆光功能吧。你的臉如魔術一樣將不會被光遮住。
+",
+media: {
+image: "assets/images/scr_backlight.png"
+}
+}
+,
+{
+title:
+"
+手動相機
+",
+desc:
+"
+只要拉一下相冊。 Elie就會關閉，應用會變成手動相機。將可以調整AF/AE Lock，進行全手動模式。當然，你也可以通過左右掃描屏幕來選擇濾色鏡。
+",
+media: {
+vimeo: 148305915
+}
+}
+,
+{
+title:
+"
+快捷相機 - Elie的手鏡
+",
+desc:
+"
+看著相冊突然想照相，就摁著中部按鈕吧。那麼，小小的預覽屏將會變大，同時在左右兩側用手指選擇背面相機或自拍相機，手指一離開屏幕就會開始進行拍攝。
+",
+media: {
+vimeo: 148308077
+}
+}
+,
+{
+title:
+"
+Quick Shooting via Spotlight Search
+",
+desc:
+"
+Quick Action is also possible to use without 3D-Touch supported device.
+咱們試試吧。
+",
+media: {
+image0: "assets/images/scr_search.jpg",
+image: "assets/images/scrs_quickaction.jpg"
+}
+}
+,
+{
+title:
+"
+30種以上的美麗實時濾色鏡
+",
+desc:
+"
+觸摸下中間的中部按鈕。在拍攝之前，你可以隨時選擇濾色鏡。之後進行修改也依然可以用。每個濾色鏡上會顯示自己所代表的顏色。紅色到紫色都排列得一清二楚，可以輕易找到你想要的感覺。
+<br>Elie已經有這麼多特點，竟然濾色鏡品質也如此高調。
+",
+media: {
+vimeo: 148305527
+}
+}]

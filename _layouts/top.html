@@ -1,9 +1,9 @@
 <!doctype html>
+{% assign pagedata=site.data[page.lang] %}
 <html lang="{{ page.lang }}">
+{% include redirect_lang_js.html %}
     <head>
         {% include head_init.html %}
-        {% include redirect_lang_js.html %}
-
         {% include head_hreflang.html %}
         {% include head_css.html %}
         {% include head_meta_ext.html %}
@@ -12,9 +12,9 @@
         <!-- https://www.iso.org/obp/ui/#search -->
         {% include topbar.html current_lang=page.lang %}
         <div class="wrapper">
-            {% include title.html title=page.title subtitle=page.subtitle vimeo_id=page.media.vimeo desc=page.desc %}
+            {% include title.html title=pagedata.title subtitle=pagedata.subtitle vimeo_id=pagedata.media.vimeo desc=pagedata.desc %}
             {% include press_featured.html %}
-            {% for f in page.features %}
+            {% for f in pagedata.features %}
                 {% include feature.html title=f.title desc=f.desc media=f.media id=forloop.index %}
             {% endfor %}
             {% include footer_above.html %}
