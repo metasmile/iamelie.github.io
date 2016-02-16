@@ -5,6 +5,10 @@
       {
         "appID": "MCAFR355J4.com.stells.elie",
         "paths": [ "*" ]
+      },
+      {
+        "appID": "MCAFR355J4.com.stells.eliew",
+        "paths": [ "*" ]
       }
     ]
   }
