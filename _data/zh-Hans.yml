@@ -39,7 +39,7 @@ features: [{
     <br><br>
     由于Elie's Room独有的特殊照片管理原理，照片所占有的容量将不再变大。
     <br><br>
-    而且，开启Privacy Mode，相册将会以Touch ID锁定，成为属于你自己的隐私相册。
+    而且，开启隐私模式，相册将会以Touch ID锁定，成为属于你自己的隐私相册。
     ",
     media: {
         vimeo: 148096687,
