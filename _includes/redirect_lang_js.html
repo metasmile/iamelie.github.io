@@ -4,6 +4,7 @@ var langs = {{ site.langs | jsonify }};
 var from404 = '{{ page.redirect_404 }}'=='true' || false;
 var baselang = '{{ site.baselang }}';
 
+
 //for IE8
 if (!Array.prototype.filter) {
   Array.prototype.filter = function(fun /*, thisp*/) {
@@ -23,7 +24,9 @@ if (!Array.prototype.filter) {
     return res;
   };
 }
-
+function urlparam(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));

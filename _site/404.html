@@ -7,6 +7,7 @@ var langs = {"en":{"countries":["US","GB","AU"],"label":"English","path":"/en","
 var from404 = 'true'=='true' || false;
 var baselang = 'en';
 
+
 //for IE8
 if (!Array.prototype.filter) {
   Array.prototype.filter = function(fun /*, thisp*/) {
@@ -26,7 +27,9 @@ if (!Array.prototype.filter) {
     return res;
   };
 }
-
+function urlparam(name) {
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null
+}
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
