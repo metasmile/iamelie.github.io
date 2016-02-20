@@ -5,3 +5,6 @@
 <meta name="viewport" content="width=device-width" />
 <meta name=description content="{{ site.marketing_main_desc }} {{ site.marketing_sub_desc }}">
 <meta name=keywords content="{{ site.marketing_keywords }}">
+{% if page.lang != site.baselang %}
+<meta name="google" content="notranslate" />
+{% endif %}
