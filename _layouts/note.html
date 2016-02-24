@@ -38,7 +38,7 @@
                 {% assign bundle_id = post.path | split :"/" | shift | first %}
                 {% if bundle_id == page_bundle_id %}
                     {% assign slugs = post.slug | split: '-' %}
-                    {% if (slugs | size == 2) and (slugs[0] == "Notice") and (slugs[1] | downcase == page.lang) %}
+                    {% if (slugs | size >= 1) and (slugs[0] == "Notice") and (post.slug contains page.lang) %}
                     <!-- post.slug : {Notice}-{lang} -->
                     <h2 class="text-center">Notice</h2>
                     <p role="article" style="margin-top:40px; font-weight: inherit;">
@@ -55,7 +55,7 @@
                 {% if bundle_id == page_bundle_id %}
                     {% assign slugs = post.slug | split: '-' %}
                     <!-- {{ slugs }} -->
-                    {% if (slugs | size == 3) and (slugs[0] == "Release") and (slugs[2] | downcase == page.lang) %}
+                    {% if (slugs | size >= 2) and (slugs[0] == "Release") and (post.slug contains page.lang) %}
                     {% if forloop.index == 1 %}
                     <!-- post.slug : {Release}-{version}-{lang}  -->
                     <h2 class="text-center">What's New</h2>
