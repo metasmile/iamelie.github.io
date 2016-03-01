@@ -14,7 +14,7 @@
         {% include topbar.html current_lang=page.lang %}
         <div class="wrapper">
             {% include title.html title=pagedata.title subtitle=pagedata.subtitle vimeo_id=pagedata.media.vimeo desc=pagedata.desc %}
-            {% include press_featured.html %}
+            {% comment %}{% include press_featured.html %}{% endcomment %}
             {% for f in pagedata.features %}
                 {% include feature.html title=f.title desc=f.desc media=f.media id=forloop.index %}
             {% endfor %}
