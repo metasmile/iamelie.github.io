@@ -1,0 +1,89 @@
+{% assign page_lang = page.name | split: '.' | first %}
+{% if page.lang %}
+    {% assign page_lang=page.lang %}
+{% endif %}
+
+<!DOCTYPE html>
+<html lang="{{ page_lang }}">
+<head>
+    <title>{{ site.page_title_head }} Developer Note</title>
+    {% include head_init.html %}
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/styles.css" rel="stylesheet">
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="container text-center" style="padding-top:10px;padding-bottom:20px;">
+    <div class="container-fluid front-page">
+        <h1>Developer Notes</h1>
+        {% assign posts = site.posts %}
+        {% if posts | size %}
+
+            <!-- last update -->
+            {% for post in posts %}
+                {% assign slugs = post.slug | split: '-' %}
+                {% if
+                    (slugs | size >= 1) and (slugs[0] == "Notice") and (post.slug contains page_lang)
+                    or
+                    (slugs | size >= 2) and (slugs[0] == "Release") and (post.slug contains page_lang)
+                %}
+                    <p style="color:#A0A0A0">Last Updated: {{ post.date | date_to_string }}</p>
+                    {% break %}
+                {% endif %}
+            {% endfor %}
+
+            <!-- notices -->
+            <div class="text-block text-left" style="margin-top:50px;">
+                {% for post in posts %}
+                    {% assign basename = post.path | split :"/" | shift | first %}
+                    {% assign slugs = post.slug | split: '-' %}
+                    {% if
+                        (basename contains '.md')
+                        and
+                        (slugs | size >= 1) and (slugs[0] == "Notice")
+                        and
+                        (post.slug contains page_lang)
+                    %}
+                    <!-- post.slug : {Notice}-{lang} -->
+                    <h2 class="text-center">Notice</h2>
+                    <p role="article" style="margin-top:40px; font-weight: inherit;">
+                        {{ post.content }}
+                    </p>
+                    {% break %}
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <!-- what's new -->
+            <h2 class="text-center">What's New</h2>
+            <div class="row">
+                {% for appid in site.appids %}
+                <div class="col-md-6">
+                    <div class="text-block text-left" style="margin-top:50px;">
+                        <h3>{{ appid[1].name }}</h2>
+                        {% for post in posts %}
+                            {% assign bundle_id = post.path | split :"/" | shift | first %}
+                            {% if bundle_id == appid[0] %}
+                                {% assign slugs = post.slug | split: '-' %}
+                                <!-- {{ slugs }} -->
+                                {% if (slugs | size >= 2) and (slugs[0] == "Release") and (post.slug contains page_lang) %}
+                                <!-- post.slug : {Release}-{version}-{lang}  -->
+                                <h3 style="margin-top:40px; font-weight: inherit;">{{ slugs[1] }}</h3>
+                                <h5>{{ post.date | date: '%B %d, %Y' }}</h5>
+                                <p role="article">
+                                    {{ post.content }}
+                                </p>
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    <div>
+</body>
+</html>

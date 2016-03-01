@@ -46,6 +46,11 @@ appstore_version : "1.0"
 appstore_id : "1051585862"
 appstore_url : "http://itunes.apple.com/app/apple-store/id1051585862?pt=2020888&ct=badge_151230&mt=8"
 appstore_name : "Elie - Your next mobile photography assistant, Automatic selfie camera"
+appids:
+    com.stells.eliew:
+        name: Elie - Free
+    com.stells.elie:
+        name: Elie
 
 # Business
 page_title_head : "Elie | "
@@ -53,7 +58,6 @@ presskit_url : http://github.com/iamelie/elie-presskit/archive/master.zip
 marketing_main_desc : "An intelligent, automatic photographing camera without a shutter button."
 marketing_sub_desc : "When you are almost finished posing, Elie will take a picture of you."
 marketing_keywords : "Mobile photography,Elie,Elie app,Elie Camera,iPhoneography,Elie for iPhone,Elie for iOS,iPhone photography,StellarStep,Buttonless camera,Messenger share,Filter effects"
-
 
 # External links
 facebook : /facebook
