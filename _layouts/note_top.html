@@ -37,26 +37,26 @@
             {% endfor %}
 
             <!-- notices -->
-            <div class="text-block text-left" style="margin-top:50px;">
-                {% for post in posts %}
-                    {% assign basename = post.path | split :"/" | shift | first %}
-                    {% assign slugs = post.slug | split: '-' %}
-                    {% if
-                        (basename contains '.md')
-                        and
-                        (slugs | size >= 1) and (slugs[0] == "Notice")
-                        and
-                        (post.slug contains page_lang)
-                    %}
+            {% for post in posts %}
+                {% assign basename = post.path | split :"/" | shift | first %}
+                {% assign slugs = post.slug | split: '-' %}
+                {% if
+                    (basename contains '.md')
+                    and
+                    (slugs | size >= 1) and (slugs[0] == "Notice")
+                    and
+                    (post.slug contains page_lang)
+                %}
                     <!-- post.slug : {Notice}-{lang} -->
-                    <h2 class="text-center">Notice</h2>
-                    <p role="article" style="margin-top:40px; font-weight: inherit;">
-                        {{ post.content }}
-                    </p>
+                    <div class="text-block text-left" style="margin-top:50px;  margin-bottom:50px;">
+                        <h2 class="text-center">Notice</h2>
+                        <p role="article" style="margin-top:40px; font-weight: inherit;">
+                            {{ post.content }}
+                        </p>
+                    </div>
                     {% break %}
-                    {% endif %}
-                {% endfor %}
-            </div>
+                {% endif %}
+            {% endfor %}
             <!-- what's new -->
             <h2 class="text-center">What's New</h2>
             <div class="row">
