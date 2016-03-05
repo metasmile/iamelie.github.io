@@ -74,7 +74,7 @@ function redirectIfMatch(){
         return false;
     }
 
-    var language = window.navigator.userLanguage || window.navigator.language;
+    var language = '' || window.navigator.userLanguage || window.navigator.language;
 
     if(from404){
         var blang = langs[baselang];
