@@ -1,1 +1,1 @@
-Dear my Elie's owners, We've fixed a crash that happens intermittently when first installed user selects a purchasing target filter at version 1.1. When it happens to you, please just restart an app. New version 1.1.1(hotfix) will release within few days!
+Dear my Elie's owners, We've fixed a crash that happens intermittently when first installed user selects a purchasing target filter at version 1.1. When it happens to you, please just restart an app. If you do, you will be able to purchase normally. New version 1.1.1(hotfix) will release within few days!
