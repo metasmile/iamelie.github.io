@@ -95,17 +95,23 @@ function redirectIfMatch(){
         return false;
     }
 
+    var mpath = matchedrelativepath();
     if(from404){
         var blang = langs[baselang];
         if(blang.path == lastpath()){
             redirect('/');
         }else{
-            redirect(replacelastpath(blang.path));
+            if(mpath == lastpath()){
+                // 404 -> tried matched path -> but also 404 -> forward to base
+                redirect(replacelastpath(blang.path));
+            }else{
+                // 404 -> tried matched path
+                redirect(replacelastpath(mpath));
+            }
         }
         return true;
 
     }else{
-        var mpath = matchedrelativepath();
         if(mpath){
             if(mpath == lastpath()){
                 return false;
