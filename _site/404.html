@@ -69,12 +69,31 @@ function lastpath(offset){
 function replacelastpath(path){
     return window.location.pathname.substring(0, window.location.pathname.indexOf(lastpath()))+path
 }
+function matchedrelativepath(){
+    var language = /*'' || */window.navigator.userLanguage || window.navigator.language;
+
+    for (var lang in langs){
+        var lobj = langs[lang];
+        var l = lang.split('-');
+        var matcher = langMatcher(l[0], l[1] && lobj.countries.concat(l[1])); //zh-Hans -> langMatcher(zh, ['Hans','CN','SG']);
+        var _lastpathname = lastpathname();
+        var matchedViaPath = _lastpathname && _lastpathname.replace(/^\s+|\s+$/g, '').match(matcher);
+        var matchedViaUserLang = language ? language.match(matcher) : false;
+        // 1st Priority : matched path
+        if(matchedViaPath){
+            return lobj.path;
+        }
+        // 2st Priority : browser lang
+        if(matchedViaUserLang){
+            return lobj.path;
+        }
+    }
+    return null;
+}
 function redirectIfMatch(){
     if(getParameterByName('lang')){
         return false;
     }
-
-    var language = '' || window.navigator.userLanguage || window.navigator.language;
 
     if(from404){
         var blang = langs[baselang];
@@ -86,25 +105,13 @@ function redirectIfMatch(){
         return true;
 
     }else{
-        for (var lang in langs){
-            var lobj = langs[lang];
-            var l = lang.split('-');
-            var matcher = langMatcher(l[0], l[1] && lobj.countries.concat(l[1])); //zh-Hans -> langMatcher(zh, ['Hans','CN','SG']);
-            var _lastpathname = lastpathname();
-            var matchedViaPath = _lastpathname && _lastpathname.replace(/^\s+|\s+$/g, '').match(matcher);
-            var matchedViaUserLang = language.match(matcher);
-
-            if(matchedViaPath || matchedViaUserLang){
-                // if(lobj.root && lang==baselang && isRootPath()){
-                //     return false;
-                // }
-                //skip check same path
-                if(lobj.path == lastpath()){
-                    return false;
-                }
-                redirect(currentpath()+lobj.path);
-                return true;
+        var mpath = matchedrelativepath();
+        if(mpath){
+            if(mpath == lastpath()){
+                return false;
             }
+            redirect(currentpath()+mpath);
+            return true;
         }
     }
 
