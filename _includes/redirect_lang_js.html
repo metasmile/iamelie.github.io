@@ -67,16 +67,11 @@ function replacelastpath(path){
     return window.location.pathname.substring(0, window.location.pathname.indexOf(lastpath()))+path
 }
 function redirectIfMatch(){
-    var pagelang = '{{ page.lang }}';
-    var language = window.navigator.userLanguage || window.navigator.language;
-
     if(getParameterByName('lang')){
         return false;
     }
 
-    if(!isRootPath() || !language){
-        language = pagelang;
-    }
+    var language = '{{ page.lang }}' || window.navigator.userLanguage || window.navigator.language;
 
     if(from404){
         var blang = langs[baselang];
@@ -97,6 +92,9 @@ function redirectIfMatch(){
             var matchedViaUserLang = language.match(matcher);
 
             if(matchedViaPath || matchedViaUserLang){
+                // if(lobj.root && lang==baselang && isRootPath()){
+                //     return false;
+                // }
                 //skip check same path
                 if(lobj.path == lastpath()){
                     return false;
