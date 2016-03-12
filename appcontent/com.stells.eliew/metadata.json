@@ -1,0 +1,29 @@
+{
+    "version" : "1.0",
+    "default":{
+        "base":{
+            "privacymode" : {
+                "images" : "https://media.githubusercontent.com/media/iamelie/elie-content/master/com.stells.eliew/products/privacymode.jpg"
+            },
+            "veil" : {
+                "images" : "https://media.githubusercontent.com/media/iamelie/elie-content/master/com.stells.eliew/products/veil.gif"
+            },
+            "room" : {
+                "images" : "https://media.githubusercontent.com/media/iamelie/elie-content/master/com.stells.eliew/products/room.gif"
+            },
+            "filter_basic" : {
+                "images" : "https://media.githubusercontent.com/media/iamelie/elie-content/master/com.stells.eliew/products/filter.gif"
+            },
+            "selfietake" : {
+                "images" : "https://media.githubusercontent.com/media/iamelie/elie-content/master/com.stells.eliew/products/selfietake.jpg"
+            }
+        }
+    },
+    "1.1":{
+        "base":{
+            "tilt" : {
+                "images" : "http://elie.camera/assets/images/scr_touchid.jpg"
+            }
+        }
+    }
+}
