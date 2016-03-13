@@ -97,8 +97,8 @@ function redirectIfMatch(){
     }
 
     var mpath = matchedrelativepath();
+    var blang = langs[baselang];
     if(from404){
-        var blang = langs[baselang];
         if(blang.path == lastpath()){
             redirect('/');
         }else{
@@ -114,7 +114,12 @@ function redirectIfMatch(){
 
     }else{
         if(mpath){
+            // stop if matched path is same as current path,
             if(mpath == lastpath()){
+                return false;
+            }
+            // stop if matched path is base path
+            if(mpath == blang.path){
                 return false;
             }
             redirect(currentpath()+mpath);
