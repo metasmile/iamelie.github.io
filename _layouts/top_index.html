@@ -1,0 +1,12 @@
+<!doctype html>
+{% assign pagedata=site.data[page.lang] %}
+{% capture sitetitle %}{{ site.data[page.lang].page_title }}{% endcapture %}
+<html lang="{{ page.lang }}">
+{% include redirect_lang_js.html %}
+    <head>
+        {% include head_init.html %}
+        {% include head_hreflang.html %}
+        {% include head_meta_ext.html %}
+    </head>
+    <body></body>
+</html>
