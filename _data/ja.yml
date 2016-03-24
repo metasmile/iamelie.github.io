@@ -10,12 +10,8 @@ message : "
 私たちには、これからElieのマスターであるあなたを感動させる、ワクワクな計画があります。
 <br><br>Elieは、今生まれたばかりです。
 "
-press_title : "新しいニュース！"
-press_desc : "私たちは、TumblrとElieの間の新たなパートナーシップを発表して満足しています!<br>
-            これから、最大10枚の写真をTumblrに上げることができます.<br>
-            また、アップロードした写真は、<a href='//tumblr.com/app/elie'>Elieの公式tumblrのページ</a>で導入されます！ <br>
-            私たちはあなたの多くが参加することを願っています.<br>
-            ( ƅ°ਉ°)ƅ  ╰(✧∇✧╰)"
+press_title : "Featured"
+press_desc : "2015年12月15日の最初のリリース"
 
 features: [{
     title:

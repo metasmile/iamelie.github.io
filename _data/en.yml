@@ -4,10 +4,8 @@ subtitle: "I'm Elie."
 desc : "Click me and then keep your face toward the rear camera. When you are almost finished posing, I will take a picture of you. I'm your intelligent partner for taking a selfie and it’s an automatic photographing camera without a shutter button."
 media : { vimeo: 150400949 }
 message : "We have gorgeous plans<br/>to impress you."
-press_title : "News"
-press_desc : "We're happy to announce a new partnership between Tumblr and Elie!<br>
-            Now you can share up to max 10 photos to tumblr in app.<br>
-            Also your publically uploaded public photos will be introducing at <a href='//tumblr.com/app/elie'>our official page in tumblr.</a> 😍 😘 😄"
+press_title : "Featured"
+press_desc : "Since initial release on December 15, 2015"
 
 features: [{
     title:
