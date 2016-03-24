@@ -288,6 +288,15 @@ header title
 	}
 }
 
+/*
+	press
+*/
+
+.press-content ul {
+	display: block;
+	width: 100%;
+	padding: 15px;
+}
 
 /*
 	features
