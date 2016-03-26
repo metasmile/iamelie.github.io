@@ -1,0 +1,222 @@
+page_title: Elie - Your Assistant selfie Inteligente.
+title: "Olá,"
+subtitle: "Estou Elie."
+desc : "Acorde Elie e enfrentar a câmera traseira de alta resolução para você. Se você pose, ele vai tirar uma foto de você. Elie é o seu novo parceiro de fotos que pode tomar, avaliação, editar, compartilhar e salvar de uma nova maneira. É hora de conhecer!"
+media : { vimeo: 150400949 }
+message : "Elie ainda tem tanto surpresas.<br>Fique ligado para atualizações."
+press_title : "Notícia"
+press_desc : "Estamos felizes em anunciar uma nova parceria entre Tumblr e Elie!<br>
+            Agora você pode compartilhar até no 10 fotos à Tumblr no app.<br>
+            Além disso, o público fez upload de fotos estará introduzindo <a href='//tumblr.com/app/elieapp'>na nossa página oficial no Tumblr</a>. 😍 😘 😄"
+features: [{
+    title:
+    "
+    O início da câmera automática.
+    ",
+    desc:
+    "
+    Elie é apenas fora do mundo para que seu rosto é o seu primeiro assunto. A câmera traseira é melhor do que a câmera frontal. Elie será o seu parceiro selfie alta qualidade.
+    <br><br>Mas há mais aplicações. Por exemplo, você acorda Elie com Siri e tirar uma foto se suas mãos não estão livres. Ou você pode anexá-lo em o drone. Por favor, verifique para mais atualizações.
+    ",
+    media: {
+        image: "assets/images/scr_home.jpg"
+    }
+}
+,
+{
+    title:
+    "
+    A sala de Elie
+    ",
+    desc:
+    "
+    Você tirar muitas fotos para obter um melhor tiro? E você remover o resto deles de novo e de novo? quarto de Elie é um álbum de foto especial que resolve este problema.
+    <br><br>Tire fotos tanto quanto você quer com Elie. E basta escolher um ou dois de seu melhor e guardá-los no álbum de IOS. Você não precisa fazer nada sobre o resto.
+    <br><br>As fotos vão substituir um ao outro com o mecanismo especial eo armazenamento permanecerá o mesmo para sempre.
+    <br><br>Além disso, modo de privacidade irá manter o segredo do álbum com Touch ID.
+    ",
+    media: {
+        vimeo: 148096687,
+        image: "assets/images/scr_touchid.jpg"
+    }
+}
+,
+{
+	title:
+	"
+    O efeito sobre tiro
+	",
+	desc:
+	"
+    Não mais de edição de fotos após a filmagem. Você liga o efeito tilt shift no painel de controle de Elie. Elie aplicará inclinação deslocamento lindamente no rosto durante o tiroteio.
+    ",
+    media: {
+        vimeo: 148095304
+    }
+}
+,
+{
+    title:
+    "
+    Visualização rápida
+    ",
+    desc:
+    "
+    Você quer ver a foto original na visualização de tela cheia?
+    <br>Pressione e segure nas miniaturas. A foto original vai encher sua tela. Você pode girar as fotos enquanto pressiona. Quando você tirar o dedo ele vai voltar para a tela original.
+    <br><br>Vamos tentar mais uma vez. Tocar, girar e decolar. Já vimos os detalhes da foto e voltar para o álbum.
+    ",
+    media: {
+        vimeo: 148305213
+    }
+}
+,
+{
+    title:
+    "
+    Uma variedade de funções, mas UI extremamente simples. Elaboração.
+    ",
+    desc:
+    "
+    Nossas mãos estão ainda o mesmo tamanho enquanto a tela ficou grande demais. Não podemos mover para cima e para baixo uma eternidade para fazer as coisas. Muitos outros aplicativos já estão pedindo-lhe para fazer isso com mais movimentos.
+    <br><br>Elie minimiza os movimentos em lidar com as fotos. A única coisa que você precisa é os três botões na parte inferior. Um botão rebordos círculo concêntrico permite controlar todas as funções com apenas o polegar e um lado. Basta tocar no botão central a qualquer momento para a aplicação, poupança e tirar fotos.
+    <br><br>Elie é projetado muito simples, porque queremos obter o melhor resultado muito rapidamente e sair do aplicativo para desfrutar da vida real.
+    ",
+    media: {
+        image: "assets/images/scr_ui.jpg"
+    }
+}
+,
+{
+	title:
+	"
+    5 predefinições otimizadas para diferentes horários.
+	",
+	desc:
+	"
+    Padrões: A otimização básica.
+    <br>Automação completa: Todos os recursos automáticos são ativados.
+    <br>Prioridade de velocidade: O tiro rápido é no mais prioridade.
+    <br>Silêncio: Não exponha de som e luz.
+    <br>Privacidade Prioridade: Bloqueia as fotos.
+    <br>Definição personalizada: Atire com sua configuração.
+    ",
+    media: {
+        vimeo: 148305441
+    }
+}
+,
+{
+	title:
+	"
+    Vail
+	",
+	desc:
+	"
+    Quando Elie tira uma foto de você, a tela é voltado para o outro lado. É um pouco de vergonha. Não se preocupe. Elie esconde a tela com véu impressionante de acordo com a situação.
+    <br><br>Se ele achar o ambiente está muito escuro, em vez de usar efeito de piscar vai deixar a tela inteira escuro para sua movimento não irá visto.
+    ",
+    media: {
+        image: "/assets/images/scr_veil.jpg"
+    }
+}
+,
+{
+	title:
+	"
+    Sinal
+	",
+	desc:
+	"
+    Como alguém tirar um foto para você o Elie também usar som ou luz quando está no preparo ou em ação. Se Elie acha que você está longe e não dar para ouvir o sinal de som ele vai usar sinal de luz.
+    ",
+    media: {
+        image: "assets/images/scr_feedback.png"
+    }
+}
+,
+{
+	title:
+	"
+    Controle de velocidade de captura
+	",
+	desc:
+	"
+    Podemos controlar a velocidade de disparo, também. Se você selecionar 'Speed', você pode tirar um por um e avaliação. Ou usar o modo de disparo mais rápido se você não se preocupam com a qualidade.
+    ",
+    media: {
+        image: "assets/images/scr_speed.png"
+    }
+}
+,
+{
+	title:
+	"
+    Remoção da luz de fundo
+	",
+	desc:
+	"
+    Se você estiver na frente da luz, por favor ligar a função 'Anti-Backlight'. Você vai se surpreender com o seu rosto claro.
+    ",
+    media: {
+        image: "assets/images/scr_backlight.png"
+    }
+}
+,
+{
+	title:
+	"
+    Câmera manual
+	",
+	desc:
+	"
+    Você só puxar para cima o álbum. Então, Elie está desativado ea câmera manual está ativada. AF / AE Lock, exposição manual e outros controles são possíveis. Claro, nós pode deslizar a tela para a esquerda ou direita para aplicar filtros em tempo real.
+    ",
+    media: {
+        vimeo: 148305915
+    }
+}
+,
+{
+	title:
+	"
+    Câmera rápida
+	",
+	desc:
+	"
+    Se você quiser tirar uma foto muito rapidamente, enquanto você está vendo o álbum, você pressionar e segurar o botão central. Exibição em tamanho pequeno pré-visualização fica maior e você selecionar a câmera traseira ou dianteira e tirar o dedo para tirar uma foto. Este é o mesmo como de pré-visualização rápida.
+    ",
+    media: {
+        vimeo: 148308077
+    }
+}
+,
+{
+	title:
+	"
+    Tiro rápido com Busca do Spotlight Search
+	",
+	desc:
+	"
+    Elie suporta 3D-Touch Ação Rápida. Mas Elie fornece um recurso semelhante sobre os dispositivos não 3D Toque. Você pesquisa 'Quick' ou 'ação rápida'. O menu irá aparecer.
+    <br><br>Tente.
+    ",
+    media: {
+        image0: "assets/images/scr_search.jpg",
+        image: "assets/images/scrs_quickaction.jpg"
+    }
+}
+,
+{
+	title:
+	"
+    Os melhores filtros de tempo real. As atualizações contínuas.
+	",
+	desc:
+	"
+    Toque no botão central. Você pode selecionar os filtros em tempo real antes de disparar. Ele pode também ser aplicada mais tarde durante a edição. Cada filtro extrai automaticamente uma cor própria. As cores são ordenados do vermelho para o roxo e fácil de encontrar. Elias também tem os melhores filtros. Você pode chamar Elie um aplicativo de filtro.
+    ",
+    media: {
+        vimeo: 148305527
+    }
+}]

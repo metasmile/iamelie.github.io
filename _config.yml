@@ -83,6 +83,14 @@ langs:
         label : English
         path : "/en"
         root : true
+    pt :
+        countries : [BR, PT]
+        label : Português
+        path : "/pt"
+    ja :
+        countries : [JP]
+        label : 日本語
+        path : "/ja"
     de :
         countries : [DE]
         label : Deutsch
@@ -91,10 +99,6 @@ langs:
         countries : [FR, CA]
         label : Français
         path : "/fr"
-    ja :
-        countries : [JP]
-        label : 日本語
-        path : "/ja"
     zh-Hans :
         countries : [CN, SG]
         label : 中文
